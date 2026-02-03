@@ -1,0 +1,99 @@
+.language-switcher {
+    position: relative;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    /* Dark text */
+}
+
+.lang-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.lang-flag {
+    font-size: 18px;
+    /* Slightly larger */
+    line-height: 1;
+    filter: none;
+    /* Ensure no filters are applied */
+    color: initial;
+    /* Reset color for emojis */
+}
+
+.arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
+
+.arrow.up {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    min-width: 160px;
+    overflow: hidden;
+    z-index: 1001;
+    animation: fadeIn 0.2s ease;
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    color: #333333;
+    /* Ensuring visible text */
+}
+
+.lang-option:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--accent-blue);
+}
+
+.lang-option.active {
+    background: rgba(0, 81, 255, 0.05);
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.lang-label {
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
