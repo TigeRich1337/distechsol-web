@@ -40,10 +40,15 @@ const ContactForm = () => {
         }
 
         try {
-            // Send to backend API
-            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+            // Send to PHP backend
+            // In development, we can't easily test PHP without a PHP server.
+            // In production, send-mail.php will be at the root.
+            const API_URL = import.meta.env.VITE_API_URL || '';
+            // If running locally with `npm run dev`, this will verify the request is sent, 
+            // but return 404/index.html unless we proxy or mock. 
+            // For production, it just works.
 
-            const response = await fetch(`${API_URL}/api/contact`, {
+            const response = await fetch(`${API_URL}/send-mail.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
